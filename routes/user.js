@@ -26,7 +26,7 @@ users.get("/", function(req, res, next) {
 		if(!doc.avatar){
 			doc.avatar = "/static/img/D.VA.jpg";
 		}
-	ArticalModel.find({author:doc._id}).then((docs) =>{
+	ArticalModel.find({author:doc.username}).then((docs) =>{
 		console.log("ARTICAl docs::::",docs);
 		// req.session.articalId = docs._id;
 		res.render("usercenter", {username: username,user:doc,data:docs});

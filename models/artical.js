@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
 
 const ArticalSchema = mongoose.Schema({
-	author:{
-		type:mongoose.Schema.Types.ObjectId,
-		ref:"user",
+	//可以使用USer的ObjectId，也可以使用USer的username
+	// author:{
+	// 	type:mongoose.Schema.Types.ObjectId,
+	// 	ref:"user",
+	// },
+	author: {
+		type:String,
 	},
 	title:String,
 	content:String,

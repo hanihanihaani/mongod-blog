@@ -20,7 +20,8 @@ editor.post("/",function(req,res,next){
 	const form = req.body;
 	console.log("Form:",form);
 	console.log("REQSESSION",req.session)
-	form.author = req.session.userId;
+	form.author = req.session.username;
+	console.log("FORM",form);
 	const art = new ArticalModel(form);
 	art.save((err,doc) =>{
 		if(err){
